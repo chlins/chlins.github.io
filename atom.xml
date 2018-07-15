@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Chlins&#39; Blog</title>
   
-  
+  <subtitle>自说自话</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zcycn.top/"/>
@@ -10,7 +10,7 @@
   <id>https://zcycn.top/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Chlins</name>
     
   </author>
   
