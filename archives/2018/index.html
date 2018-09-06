@@ -1,1 +1,492 @@
-<!DOCTYPE html><html lang="cn"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>Chlins' Blog</title><meta name="description" content="nil"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/"><link rel="stylesheet" href="/css/gandalfr.css"><link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/Hybird.css"><link rel="search" type="application/opensearchdescription+xml" href="https://zcycn.top/atom.xml" title="Chlins' Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="https://images-1251800273.cos.ap-chengdu.myqcloud.com/blog/Ca9CqMWUUAAd2TI.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">HOME</a></li><li class="nav-list-item"><a href="/archives" target="_self" class="nav-list-link">ARCHIVES</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="https://github.com/chlins" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="archive"><h2 class="archive-year tagcloud">Tags</h2><script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script><script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script><div id="myCanvasContainer" align="center" class="widget tagcloud"><canvas id="resCanvas" width="600" height="500"></canvas></div></div><div class="archive"><h2 class="archive-year">2018</h2><div class="post-item"><div class="post-info">Jul 14, 2018</div><a href="/2018/07/14/hello-world/" class="post-title-link">Hello World</a></div></div></main><footer><div class="paginator"><span class="page-number current">1</span></div><div class="copyright"><p>© 2017 - 2018 <a href="https://zcycn.top">Chlins</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/MikeCoder/hexo-theme-gandalfr" target="_blank">hexo-theme-gandalfr</a>.</p></div></footer></div><script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" crossorigin="anonymous"></script><script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js" crossorigin="anonymous"></script><script>$(document).ready(function() { $('pre').each(function(i, block) { hljs.highlightBlock(block); }); });</script></body></html>
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.1.1
+    -->
+    <script>
+window.lsVersion = "1.1.1",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>Archives: 2018 | Chlins&#39; Blog</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="shortcut icon" type="image/ico" href="/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="nil">
+
+<!-- Keywords -->
+
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/css/style.min.css">
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+    
+        <link rel="alternate" type="application/atom+xml" href="/atom.xml">
+    
+
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Chlins&#39; Blog">
+<meta name="msapplication-starturl" content="https://zcycn.top">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Chlins&#39; Blog">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    
+
+
+<meta property="og:title" content="Archives: 2018 | Chlins&#39; Blog">
+
+<meta property="og:type" content="blog">
+<meta property="og:url" content="https://zcycn.top/archives/2018/">
+<meta property="og:image" content="https://zcycn.top/img/suka-favicon.ico">
+
+<meta property="og:description" content="nil">
+
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+<meta property="og:locale" content="zh-cn">
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="https://zcycn.top/archives/2018/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+
+
+
+    <!-- ### Custom Head ### -->
+    
+
+
+</head>
+
+    <body>
+        
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/">Chlins&#39; Blog</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Hi, nice to meet you.
+            
+        
+    </p>
+
+    <section class="navbar-section text-center">
+    
+        <a href="/" class="navbar-link">Home</a>
+    
+    
+        <a href="/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        
+<div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=Chlins' Blog&url=https://zcycn.top&pic=https://zcycn.top/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=Chlins' Blog&url=https://zcycn.top&via=Chlins" target="_blank" rel="noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://zcycn.top" target="_blank" rel="noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=https://zcycn.top" target="_blank" rel="noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://zcycn.top/index.html&title=" target="_blank" rel="noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Chlins' Blog&title=&summary=nil&pics=https://zcycn.top/img/suka-favicon.ico&url=https://zcycn.top/index.html" target="_blank" rel="noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://telegram.me/share/url?url=https://zcycn.top/index.html&text=" target="_blank" rel="noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAAAAAB0L9x7AAABiElEQVR42u3ayw7DIAxE0fz/T7erLhrBzEARMdXNplKax4lkYYO5XgWOCwQIEEcgLnF8/v+6UVxzP6eeC6I2ohk05sF3VO9+dR5EbYQKyNbLmw8Vwdp8LogjEerl6hoQ/4u4X5OcA/EfCJeAesVMt2BZmUVBbEckhe7M7/JqG8QWhJ20dl7iip2ls3IQWxHpJCcNwiSZgaiNSG9yA1oyOHUTGIiyCLX4oYoXNYDJCRKIkgiXoEYXyFwysyMmiBKIZABSCyPqQ+QHgCiLUEGUvDiZEE81XUA8gkgXQlSB6xp0IM5CJBOYZDF1KtmBKIlIAi4taF0hDOJMRG8S6xptIw1aELURaeC5RKcWW3rFE4iaiPSGGTCIcxHJZj63gWOkAQeiPsItdKlAHd1EOt2cBbENkTTsRzcFxwEOoiwiTVazBXG30AFRGpFsAFRNFrcBbNkuRBCPI1xhohKeTW4gjkXYxvvA5Gc6MEFsR6SN+JFGrgKAqI34ZaNwstkLxFmIJw8QIECURrwBQZsqCZhwDQYAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</section>
+</header>
+
+            <div class="container">
+    <div class="main-container">
+        <main>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-left">
+                        <div class="timeline-icon"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="tile">
+                            <div class="tile-content">
+                                <p class="tile-title">
+                                    1 posts in total
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                
+                
+                
+                    
+                    
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-left">
+                            <div class="timeline-icon icon-lg"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="tile">
+                                <div class="tile-content">
+                                    <p class="tile-title mb-0 h4">
+                                        2018
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-left">
+                            <div class="timeline-icon"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="tile">
+                                <div class="tile-content">
+                                    <span class="tile-subtitle text-gray mb-1">09-02</span>
+                                    <a href="/2018/09/02/hello-world/" class="timeline-tile-title ml-1"><span class="tile-title">Hello World</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+
+            </div>
+
+        </main>
+        
+
+    </div>
+</div>
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="https://zcycn.top">Chlins&#39; Blog</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.1.1 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
