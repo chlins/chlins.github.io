@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zcycn.top/"/>
-  <updated>2018-09-14T10:09:02.177Z</updated>
+  <updated>2018-10-02T09:50:05.910Z</updated>
   <id>https://zcycn.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>zookeeper小谈</title>
+    <link href="https://zcycn.top/2018/10/02/zookeeper%E5%B0%8F%E8%B0%88/"/>
+    <id>https://zcycn.top/2018/10/02/zookeeper小谈/</id>
+    <published>2018-10-02T02:30:32.000Z</published>
+    <updated>2018-10-02T09:50:05.910Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><blockquote><p>ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services. All of these kinds of services are used in some form or another by distributed applications. Each time they are implemented there is a lot of work that goes into fixing the bugs and race conditions that are inevitable. Because of the difficulty of implementing these kinds of services, applications initially usually skimp on them ,which make them brittle in the presence of change and difficult to manage. Even when done correctly, different implementations of these services lead to management complexity when the applications are deployed.</p></blockquote><p>以上摘自官方文档对zookeeper的定义和主要功能的介绍，简单的来说，可以将它定义为一个分布式的协调器，本身它也是Google chubby框架的开源实现，可以用它来实现分布式锁，配置中心等功能。zookeeper的文件存储模型本身也是非常的友好的，是一种类似标准文件系统的树形结构，如：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/------</span><br><span class="line">       /Services-------</span><br><span class="line">          /Service1</span><br><span class="line">          /Service2</span><br><span class="line">       </span><br><span class="line">       /Groups---------</span><br><span class="line">          /Group1</span><br><span class="line">          /Group2</span><br></pre></td></tr></table></figure><p>数据结构特征：</p><ol><li>目录项称为znode，唯一标识</li><li>znode下可以创建子znode，每个znode可以存储数据，类似redis中的key-value</li><li>znode可以定义版本</li><li>znode可以通过session与server之间创建临时节点，即当session失效后，自动删除znode</li><li>顺序节点，即zk提供自动向后编号节点，例如 app1, app2, app3 ……</li><li>提供watch机制，可以对znode进行监控</li></ol><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>👆介绍了zk的存储的数据结构，现在我们看看可以用它来实现哪些功能</p><ul><li><p>分布式锁</p><p>​        zk可以实现跨主机之间的锁，实现的方法其实就是创建一个临时的目录节点，查看该目录下的子目录中节点编号最小的那个节点，如果是自己创建的，则拿到了锁，否则对比自己小的中最大的那个节点建立监听器，注意这里为什么不是对最小的那个建立监听器是为了避免一旦最小节点的锁释放，而导致需要向所有监听节点发送事件而导致的<code>羊群效应</code>，当自己为集群中最小的节点时，即拿到锁，释放锁只要删除自己创建的znode就可以了。</p></li><li><p>队列</p><p>​       创建顺序节点，每次返回节点编号数最小的那个，即实现了FIFO。</p></li><li><p>命名服务</p><p>​        通过znode间的层次关系以及顺序节点的特效可以实现更加方便快捷的服务命名。</p></li><li><p>配置中心</p><p>​        集群中如果某个配置变更，需要所有运行的app切换至新的配置，如果手工去操作，当集群规模很大时，无异于是非常繁琐的一个工作，这时候我们可以让所有的app的去监控配置目录，由应用自主重启。</p></li><li><p>集群管理</p><p>​        集群的管理主要是两个核心功能，即新机器的上线和旧机器的下线，我们可以很方便的通过watch机制来实现。</p></li></ul><h3 id="Zab协议"><a href="#Zab协议" class="headerlink" title="Zab协议"></a>Zab协议</h3><p>zookeeper之所以能够实现分布式，保障数据的一致性，是通过zookeeper atomic broadcast来保障的，即zookeeper原子广播协议，在分布式领域，有一个非常经典的理论，即CAP理论，也同样有一个非常经典的分布式算法，即Paxos算法，不过Paxos算法的工程实现较为复杂，所以后来出现了Multi Paxos算法，例如zab和raft等。</p><h4 id="集群状态"><a href="#集群状态" class="headerlink" title="集群状态"></a>集群状态</h4><ol><li><p>崩溃恢复状态</p><p>进入情况：</p><ul><li>服务启动</li><li>leader服务崩溃或者网络故障</li><li>新节点加入集群且集群处于广播状态</li></ul><p>此时集群异常，需要开始新的一轮选主，节点状态又可分为以下四种：</p><ul><li>looking 集群无leader，准备选主</li><li>following 集群存在leader</li><li>leading 即唯一leader</li><li>observing 观察者</li></ul><p>数据模型：</p><ul><li>sid server id标识机器</li><li>zxid 事务id 递增</li></ul><p>选主规则：</p><ul><li>初始状态会给自己投票</li><li>接收到其他服务器的投票后，优先检查zxid，zxid比较大的优先作为leader，若相同，则比较sid，大的优先作为leader</li><li>超过集群半数的机器投了一个node，则投票结束，node设置各自为leader或者follower</li></ul></li><li><p>消息广播状态</p><p>进入情况：</p><p>集群已有leader，且超过半数的机器状态同步完成</p><p>这个状态就是集群的正常工作态，也就是数据同步的状态</p><ul><li>读请求由follower或observer直接返回给client</li><li>写请求统一都会被转发给leader，leader分配唯一的事务id，然后向follower发起proposal，follower收到后首先以事务日志的形式写到磁盘上，防止丢失，然后在写入成功后，向leader发送成功写入的Ack，leader收到半数以上的follower的Ack后，广播commit消息通知follower进行事务提交，同时自身也会进行commit</li></ul></li></ol><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>感谢广大网友的热心分享</p><p><a href="https://mp.weixin.qq.com/s/DjYEreC-5ADiZXKdlzpnxw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/DjYEreC-5ADiZXKdlzpnxw</a></p><p><a href="http://zookeeper.apache.org/" target="_blank" rel="noopener">http://zookeeper.apache.org/</a></p><p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper/index.html</a></p><p><a href="https://www.cnblogs.com/felixzh/p/5869212.html" target="_blank" rel="noopener">https://www.cnblogs.com/felixzh/p/5869212.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;ZooKeeper is a centralized service for maintaining config
+      
+    
+    </summary>
+    
+    
+      <category term="分布式" scheme="https://zcycn.top/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>sync.Pool使用</title>
