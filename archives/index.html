@@ -1,531 +1,105 @@
-<!DOCTYPE html>
-
-<html lang="zh-CN">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © SukkaW
-        GitHub: https://github.com/SukkaW/hexo-theme-suka
-        Version: 1.1.1
-    -->
-    <script>
-window.lsVersion = "1.1.1",
-window.oldVersion = [
-    
-        
-            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0"
-        
-    
-]
-</script>
-
-    <!-- ### DNS Prefetch ### -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-<!-- busuanzi -->
-
-    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
-
-
-<!-- comment -->
-
-
-    <link rel="dns-prefetch" href="//disqus.com">
-    <link rel="dns-prefetch" href="//zcycn-top.disqus.com">
-
-
-
-
-
-
-<!-- analytics -->
-
-
-
-
-
-    <!-- ### Meta & Title & Info ### -->
-    
-
-
-<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
-<meta name="renderer" content="webkit">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-
-<!-- Title -->
-<title>归档 | Chlins&#39; Blog</title>
-
-<!-- favicon -->
-<!-- Favicons -->
-
-    <link rel="shortcut icon" type="image/ico" href="/img/suka-favicon.ico">
-
-
-
-
-
-
-<!-- Android Chrome Color -->
-
-
-
-<meta name="format-detection" content="telephone=no">
-
-<!-- Description -->
-<meta name="description" content="nil">
-
-<!-- Keywords -->
-
-
-<!-- Disable Fucking Bloody Baidu Tranformation -->
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <!-- ### Import File ### -->
-    
-        <!-- spectre.css -->
-
-    <link rel="stylesheet" href="/lib/spectre/spectre.min.css">
-
-
-<style>
-    body {
-        background-color: #f8f9fa;
-    }
-
-    a, a:visited {
-        color: #0070ff;
-    }
-
-    a:active, a:focus, a:hover {
-        color: #0070ff;
-        opacity: .75;
-    }
-
-    #post-content a,
-    #post-content a:hover,
-    #post-content a:focus,
-    #post-content a:visited {
-        color: #005eb9;
-        opacity: 1;
-    }
-
-    .post-entry .card-body a {
-        color: #0070ff;
-    }
-
-    .avatar {
-        background: #444;
-    }
-
-    .navbar-link,
-    .navbar-link:visited,
-    .timeline .timeline-item .timeline-icon.icon-lg {
-        color: #0070ff;
-    }
-
-    .navbar-link:hover {
-        color: #0070ff;
-        opacity: .8;
-    }
-
-    #search-input .btn,
-    #disqus_click_btn,
-    #disqus-switch-to-direct,
-    #disqus-loadmore-button {
-        background: #727e96;
-        border-color: #727e96;
-        color: #fff;
-    }
-
-    #post-toc a.post-toc-link,
-    #post-toc a.post-toc-link:visited,
-    .share-menu.menu .menu-item>a {
-        color: #727e96;
-    }
-
-    .share-menu.menu .menu-item>a:hover,
-    .share-menu.menu .menu-item>a:focus,
-    .share-menu.menu .menu-item>a:visited {
-        color: #50596c;
-        background: #f8f9fa;
-        opacity: .85;
-    }
-</style>
-
-<!-- style.css -->
-
-    <link rel="stylesheet" href="/css/style.min.css">
-
-
-
-
-
-
-
-    <!-- Prettify Theme -->
-    
-
-
-    
-
-    <!-- ### Site Verification ### -->
-    
-
-
-    <!-- ### RSS ### -->
-    
-    
-        <link rel="alternate" type="application/atom+xml" href="/atom.xml">
-    
-
-
-    <!-- ### WebApp ### -->
-    <meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="Chlins&#39; Blog">
-<meta name="msapplication-starturl" content="https://zcycn.top">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Chlins&#39; Blog">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-<!-- Manifest Import -->
-
-<!-- Open Search -->
-
-
-    <!-- ### The Open Graph & Twitter Card Protocol ### -->
-    
-
-
-<meta property="og:title" content="归档 | Chlins&#39; Blog">
-
-<meta property="og:type" content="blog">
-<meta property="og:url" content="https://zcycn.top/archives/">
-<meta property="og:image" content="https://zcycn.top/img/suka-favicon.ico">
-
-<meta property="og:description" content="nil">
-
-
-
-<meta name="twitter:card" content="summary">
-
-
-
-<meta property="og:locale" content="zh-CN">
-
-
-    <!-- ### Analytics ### -->
-    
-
-
-
-
-
-
-
-
-    <!-- ### Canonical link ### -->
-    <link rel="canonical" href="https://zcycn.top/archives/">
-
-    <!-- ### Structured Data ### -->
-    
-
-
-
-
-
-
-    <!-- ### Custom Head ### -->
-    
-
-
-</head>
-
-    <body>
-        
-            <!-- ### Main content ### -->
-            <!-- ## Header ##-->
-<header>
-    <h1 class="header-title text-center"><a href="/">Chlins&#39; Blog</a></h1>
-
-    <p class="text-center header-slogan">
-        
-            
-                Hi, nice to meet you.
-            
-        
-    </p>
-
-    <section class="navbar-section text-center">
-    
-        <a href="/" class="navbar-link">首页</a>
-    
-    
-        <a href="/archives/" class="navbar-link">归档</a>
-    
-    
-    
-    
-        
-<div class="dropdown dropdown-right">
-    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
-    <ul class="menu share-menu">
-
-        <!-- Share Weibo -->
-        
-        <li class="menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=Chlins' Blog&url=https://zcycn.top&pic=https://zcycn.top/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="noopener noreferrer nofollow">分享到微博</a>
-        </li>
-        
-
-        <!-- Share Twitter -->
-        
-        <li class="menu-item">
-            <a href="https://twitter.com/intent/tweet?text=Chlins' Blog&url=https://zcycn.top&via=Chlins" target="_blank" rel="noopener noreferrer nofollow">分享到 Twitter</a>
-        </li>
-        
-
-        <!-- Share Facebook -->
-        
-        <li class="menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://zcycn.top" target="_blank" rel="noopener noreferrer nofollow">分享到 Facebook</a>
-        </li>
-        
-
-        <!-- Share Google+ -->
-        
-        <li class="menu-item">
-            <a href="https://plus.google.com/share?url=https://zcycn.top" target="_blank" rel="noopener noreferrer nofollow">分享到 Google+</a>
-        </li>
-        
-
-        <!-- Share LinkedIn -->
-        
-        <li class="menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://zcycn.top/2018/10/02/zookeeper小谈/index.html&title=zookeeper小谈" target="_blank" rel="noopener noreferrer nofollow">分享到 LinkedIn</a>
-        </li>
-        
-
-        <!-- Share QQ -->
-        
-        <li class="menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=Chlins' Blog&title=zookeeper小谈&summary=nil&pics=https://zcycn.top/img/suka-favicon.ico&url=https://zcycn.top/2018/10/02/zookeeper小谈/index.html" target="_blank" rel="noopener noreferrer nofollow"> 分享到 QQ</a>
-        </li>
-        
-
-        <!-- Share Telegram -->
-        
-        <li class="menu-item">
-            <a href="https://telegram.me/share/url?url=https://zcycn.top/2018/10/02/zookeeper小谈/index.html&text=zookeeper小谈" target="_blank" rel="noopener noreferrer nofollow">分享到 Telegram</a>
-        </li>
-        
-
-        <!-- QRCode -->
-        
-        <li class="menu-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB2klEQVR42u3awY7CMAxF0f7/T8MKCarY7zktUuLebhhgGs7CtRMnx2vB6wAFChSoAepIrtH3n89+Bvt6f/6faJzzmKB6oYZBFww6+nt0T4SLfgdUP1QUzOqz8wMTQdTvgHoOapRko6TqBjyoZ6NUsc2CXxVmUL1RaaFMBhxO1kThvjxLALU8Si0c7nq9dTUDallUqQEhFqhZcf5b1wXUcqhz0nMaHXaBNRKrzOigtkRFE7RRoLtXFOTZ74HqiVIDZq9OQ6Q8SwC1HcoNeCdxuvfJ5Alqa5Qz0Xcb9qPi6240geqHuhLc6gGJCrq1cAC1HSormNWCXNm4BPUM1GzBdZq3TkIF1QOlJmCVQxFOsyRNtKBaoLLFZAaPIBlQLmRBtUFVb1YHKNzNS1A9UdNBWXwYrEkkqBYolTCdBr+TdNVkEFQflArC7FCXu5mkmvqg+qGcZDjT+HcfGFA9UdWGhXsI0DlkCKofyk18M4e3VNIE1Q/lHLpxGvfOoS2VjEH1QFUmZw7Y3Qy3D3WB2hJVCXC7uCaBHn4HqhVKbUReObQVHgwEBUo0Wp0inQU7qGegZop2pXEGqi/KOeDnNjNUogXVH+U2N6rF1pn0XVrNgFoStdIFChQoUF/XG3yvEaCX7f+NAAAAAElFTkSuQmCC" alr="QRCode">
-        </li>
-        
-
-    </ul>
-</div>
-    
-    
-        <a href="/atom.xml" target="_blank" class="navbar-link">RSS</a>
-    
-</section>
-</header>
-
-            <div class="container">
-    <div class="main-container">
-        <main>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-left">
-                        <div class="timeline-icon"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="tile">
-                            <div class="tile-content">
-                                <p class="tile-title">
-                                    目前共计 3 篇文章
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-
-                
-                
-                
-                    
-                    
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-left">
-                            <div class="timeline-icon icon-lg"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="tile">
-                                <div class="tile-content">
-                                    <p class="tile-title mb-0 h4">
-                                        2018
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-left">
-                            <div class="timeline-icon"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="tile">
-                                <div class="tile-content">
-                                    <span class="tile-subtitle text-gray mb-1">10-02</span>
-                                    <a href="/2018/10/02/zookeeper小谈/" class="timeline-tile-title ml-1"><span class="tile-title">zookeeper小谈</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                
-                
-                
-                    <div class="timeline-item">
-                        <div class="timeline-left">
-                            <div class="timeline-icon"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="tile">
-                                <div class="tile-content">
-                                    <span class="tile-subtitle text-gray mb-1">09-14</span>
-                                    <a href="/2018/09/14/sync-Pool使用/" class="timeline-tile-title ml-1"><span class="tile-title">sync.Pool使用</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                
-                
-                
-                    <div class="timeline-item">
-                        <div class="timeline-left">
-                            <div class="timeline-icon"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="tile">
-                                <div class="tile-content">
-                                    <span class="tile-subtitle text-gray mb-1">08-14</span>
-                                    <a href="/2018/08/14/hello-world/" class="timeline-tile-title ml-1"><span class="tile-title">Hello World</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                
-
-            </div>
-
-        </main>
-        
-
-    </div>
-</div>
-            <!-- ### Footer ### -->
-            <footer class="text-center">
-    <!-- footer copyright -->
-    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
-        <a class="footer-copyright-a" href="https://zcycn.top">Chlins&#39; Blog</a>
-    </p>
-    <!-- footer custom text -->
-    <p class="footer-text mb-0">
-    
-    </p>
-    <!-- footer develop info -->
-    <p class="footer-develop mb-0">
-        
-            
-    <!-- Busuanzi User Views -->
-    <span id="busuanzi_container_site_uv" hidden>
-        <span></span>
-        <span id="busuanzi_value_site_uv"></span>
-        <span>Viewers</span>
-        
-            <span>|</span>
-        
-    </span>
-
-
-
-        
-        
-        Powered by&nbsp;<!--
-         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
-         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="noopener">Suka</a>
-    </p>
-</footer>
-
-        
-
-        <!-- ### Import File ### -->
-        <!-- ### Footer JS Import ### -->
-
-<script>
-window.lazyLoadOptions = {
-    elements_selector: ".lazyload",
-    threshold: 50
-};
-
-
-
-    /* Copyright */
-    var copyrightNow = new Date().getFullYear();
-    var copyrightContent = document.querySelector('span[data-year]')
-    
-        copyrightContent.textContent = copyrightNow
-    
-
-
-
-/* Cnosole Log */
-console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.1.1 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
-</script>
-
-<!-- vanilla-lazyload -->
-
-    <script src="/lib/vanilla-lazyload/lazyload.min.js" async></script>
-
-
-
-    <!-- Busuanzi -->
-    
-    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-<!-- Offset -->
-
-
-
-
-
-
-
-<!-- gallery.js -->
-
-
-<!-- Comment -->
-
-    
-
-
-<!-- ### Custom Footer ### -->
-
-
-    </body>
-
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Hexo | Hexo</title><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><script src="/js/third-party/jquery.min.js">           </script><script src="/js/third-party/velocity.min.js">           </script><script src="/js/third-party/velocity.ui.min.js">           </script><link rel="icon" href="/img/favicon.ico"></head><body><nav id="nav-bar"><nav class="clear-fix" id="nav-container"><div class="pull-left" id="page-home"><a href="/">Hexo</a></div><i class="fa fa-bars pull-right" id="toggle-nav" aria-hidden="true"></i><ul class="pull-right" id="navs"><li><a class="nav" href="/">Home</a></li><li><a class="nav" href="/about">About</a></li><li><a class="nav" href="/tags">Tags</a></li></ul></nav></nav><header id="header-info"><div id="header-container"><div id="site-info"><div id="terminal-pl"><div id="top-bar"><ul id="control"><li class="btn"></li><li class="btn"></li><li class="btn"></li></ul><div id="file-path"><i class="fa fa-folder folder-ic" aria-hidden="true"></i> chlins 10 X 10</div></div><div id="code-pl">Last updated: 2018-12-14<br>chlins:~ Desktop$ <span class="code-pl-input">node home.js</span><br><br>> Blog.purpose<br><span class="answer">Sharing something interesting in my limited life.</span><br><br>> Blog.author<br><span class="answer">chlins</span><br><br>> Blog.more<br><a href="https://github.com/chlins" target="_blank"><span class="answer">check here</span></a></div></div></div></div></header><div id="content-outer"><div id="content-inner"><div class="recent-post-item"><a class="article-title" href="/2018/10/02/zookeeper小谈/">zookeeper小谈</a><time class="article-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-10-02</time><div class="article-inner"><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><blockquote>
+<p>ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services. All of these kinds of services are used in some form or another by distributed applications. Each time they are implemented there is a lot of work that goes into fixing the bugs and race conditions that are inevitable. Because of the difficulty of implementing these kinds of services, applications initially usually skimp on them ,which make them brittle in the presence of change and difficult to manage. Even when done correctly, different implementations of these services lead to management complexity when the applications are deployed.</p>
+</blockquote>
+<p>以上摘自官方文档对zookeeper的定义和主要功能的介绍，简单的来说，可以将它定义为一个分布式的协调器，本身它也是Google chubby框架的开源实现，可以用它来实现分布式锁，配置中心等功能。zookeeper的文件存储模型本身也是非常的友好的，是一种类似标准文件系统的树形结构，如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/------</span><br><span class="line">       /Services-------</span><br><span class="line">       				   /Service1</span><br><span class="line">       				   /Service2</span><br><span class="line">       </span><br><span class="line">       /Groups---------</span><br><span class="line">       				   /Group1</span><br><span class="line">       				   /Group2</span><br></pre></td></tr></table></figure>
+<p>数据结构特征：</p>
+<ol>
+<li>目录项称为znode，唯一标识</li>
+<li>znode下可以创建子znode，每个znode可以存储数据，类似redis中的key-value</li>
+<li>znode可以定义版本</li>
+<li>znode可以通过session与server之间创建临时节点，即当session失效后，自动删除znode</li>
+<li>顺序节点，即zk提供自动向后编号节点，例如 app1, app2, app3 ……</li>
+<li>提供watch机制，可以对znode进行监控</li>
+</ol>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>👆介绍了zk的存储的数据结构，现在我们看看可以用它来实现哪些功能</p>
+<ul>
+<li>分布式锁</li>
+</ul>
+<p>​        zk可以实现跨主机之间的锁，实现的方法其实就是创建一个临时的目录节点，查看该目录下的子目录中节点编号最小的那个节点，如果是自己创建的，则拿到了锁，否则对比自己小的中最大的那个节点建立监听器，注意这里为什么不是对最小的那个建立监听器是为了避免一旦最小节点的锁释放，而导致需要向所有监听节点发送事件而导致的<code>羊群效应</code>，当自己为集群中最小的节点时，即拿到锁，释放锁只要删除自己创建的znode就可以了。</p>
+<ul>
+<li>队列</li>
+</ul>
+<p>​       创建顺序节点，每次返回节点编号数最小的那个，即实现了FIFO。</p>
+<ul>
+<li>命名服务</li>
+</ul>
+<p>​        通过znode间的层次关系以及顺序节点的特效可以实现更加方便快捷的服务命名。</p>
+<ul>
+<li>配置中心</li>
+</ul>
+<p>​        集群中如果某个配置变更，需要所有运行的app切换至新的配置，如果手工去操作，当集群规模很大时，无异于是非常繁琐的一个工作，这时候我们可以让所有的app的去监控配置目录，由应用自主重启。</p>
+<ul>
+<li>集群管理</li>
+</ul>
+<p>​        集群的管理主要是两个核心功能，即新机器的上线和旧机器的下线，我们可以很方便的通过watch机制来实现。</p>
+<h3 id="Zab协议"><a href="#Zab协议" class="headerlink" title="Zab协议"></a>Zab协议</h3><p>zookeeper之所以能够实现分布式，保障数据的一致性，是通过zookeeper atomic broadcast来保障的，即zookeeper原子广播协议，在分布式领域，有一个非常经典的理论，即CAP理论，也同样有一个非常经典的分布式算法，即Paxos算法，不过Paxos算法的工程实现较为复杂，所以后来出现了Multi Paxos算法，例如zab和raft等。</p>
+<h4 id="集群状态"><a href="#集群状态" class="headerlink" title="集群状态"></a>集群状态</h4><ol>
+<li>崩溃恢复状态</li>
+</ol>
+<p>进入情况：</p>
+<ul>
+<li>服务启动</li>
+<li>leader服务崩溃或者网络故障</li>
+<li>新节点加入集群且集群处于广播状态</li>
+</ul>
+<p>此时集群异常，需要开始新的一轮选主，节点状态又可分为以下四种：</p>
+<ul>
+<li>looking 集群无leader，准备选主</li>
+<li>following 集群存在leader</li>
+<li>leading 即唯一leader</li>
+<li>observing 观察者</li>
+</ul>
+<p>数据模型：</p>
+<ul>
+<li>sid server id标识机器</li>
+<li>zxid 事务id 递增</li>
+</ul>
+<p>选主规则：</p>
+<ul>
+<li>初始状态会给自己投票</li>
+<li>接收到其他服务器的投票后，优先检查zxid，zxid比较大的优先作为leader，若相同，则比较sid，大的优先作为leader</li>
+<li>超过集群半数的机器投了一个node，则投票结束，node设置各自为leader或者follower</li>
+</ul>
+<ol start="2">
+<li>消息广播状态</li>
+</ol>
+<p>进入情况：</p>
+<p>集群已有leader，且超过半数的机器状态同步完成</p>
+<p>这个状态就是集群的正常工作态，也就是数据同步的状态</p>
+<ul>
+<li>读请求由follower或observer直接返回给client</li>
+<li>写请求统一都会被转发给leader，leader分配唯一的事务id，然后向follower发起proposal，follower收到后首先以事务日志的形式写到磁盘上，防止丢失，然后在写入成功后，向leader发送成功写入的Ack，leader收到半数以上的follower的Ack后，广播commit消息通知follower进行事务提交，同时自身也会进行commit</li>
+</ul>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>感谢广大网友的热心分享</p>
+<p><a href="https://mp.weixin.qq.com/s/DjYEreC-5ADiZXKdlzpnxw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/DjYEreC-5ADiZXKdlzpnxw</a></p>
+<p><a href="http://zookeeper.apache.org/" target="_blank" rel="noopener">http://zookeeper.apache.org/</a></p>
+<p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper/index.html</a></p>
+<p><a href="https://www.cnblogs.com/felixzh/p/5869212.html" target="_blank" rel="noopener">https://www.cnblogs.com/felixzh/p/5869212.html</a></p>
+</div><div class="article-footer"><a class="article-more" href="/2018/10/02/zookeeper小谈/#more">more>></a><div class="article-tags"><i class="fa fa-tag" aria-hidden="true"></i><a class="article-tag" href="/tags/#分布式">分布式</a></div></div></div><div class="recent-post-item"><a class="article-title" href="/2018/09/14/sync-Pool使用/">sync.Pool使用</a><time class="article-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-09-14</time><div class="article-inner"><h3 id="sync-Pool"><a href="#sync-Pool" class="headerlink" title="sync.Pool"></a>sync.Pool</h3><p>这是在<code>golang</code>1.3版本的时候新加入标准包sync里面的一个新特性，目的就是提供一个通用的对象池，复用临时对象，减少GC的压力，并且保证pool中的资源时协程安全的。</p>
+<p>pool的用法也十分的简单，操作的话其实只有两个方法，分别是<code>Put</code>和<code>Get</code>，语义是放入资源和取出资源。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"sync"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">      <span class="keyword">var</span> pool sync.Pool</span><br><span class="line"></span><br><span class="line">      fmt.Println(pool.Get())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时我们得到的结果是<code>&lt;nil&gt;</code>，是因为在声明<code>pool</code>的时候我们没有给它设置初始化资源的方法<code>New func() interface{}</code>，现在我们声明一个方法</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    pool := &amp;sync.Pool&#123;New: <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">interface</span></span>&#123;&#125;&#123;<span class="keyword">return</span> <span class="string">"hello"</span>&#125;&#125;</span><br><span class="line">    fmt.Println(pool.Get())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时我们得到的输出就是<code>hello</code>了，假设我们再次<code>Get</code>，此时会得到还是<code>hello</code>，那是因为我们传递的<code>New</code>方法就是返回一个<code>hello</code>对象，当<code>pool</code>中没有对象了，就会调用<code>New</code>分配一个资源出来，假设<code>pool</code>中有资源，还是会优先返回其中的资源，如下：</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    pool := &amp;sync.Pool&#123;New: <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">interface</span></span>&#123;&#125;&#123;<span class="keyword">return</span> <span class="string">"hello"</span>&#125;&#125;</span><br><span class="line">    pool.Put(<span class="string">"world"</span>)</span><br><span class="line">    fmt.Println(pool.Get())</span><br><span class="line">    fmt.Println(pool.Get())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时首先打印<code>world</code>再打印<code>hello</code></p>
+<p>最后在使用<code>pool</code>的时候同样也有一些注意点，如果不注意就会踩坑（😭）</p>
+<p>注意：</p>
+<ul>
+<li><p>放入<code>pool</code>中的对象，并不会一直等待被<code>Get</code>，每过一段时间就会被GC回收，（所以千万不要把<code>pool</code>当成<code>cache</code>用！！！）</p>
+</li>
+<li><p><code>pool</code>的应用场景主要是一些临时的状态无关的数据，所以一些有状态的数据并不适合存储在其中（例如数据库连接等）</p>
+</li>
+</ul>
+</div><div class="article-footer"><a class="article-more" href="/2018/09/14/sync-Pool使用/#more">more>></a><div class="article-tags"><i class="fa fa-tag" aria-hidden="true"></i><a class="article-tag" href="/tags/#golang">golang</a></div></div></div><div class="recent-post-item"><a class="article-title" href="/2018/08/14/hello-world/">Hello World</a><time class="article-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-08-14</time><div class="article-inner"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="Test-Code"><a href="#Test-Code" class="headerlink" title="Test Code"></a>Test Code</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"Hello world!"</span>)	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div><div class="article-footer"><a class="article-more" href="/2018/08/14/hello-world/#more">more>></a><div class="article-tags"><i class="fa fa-tag" aria-hidden="true"></i></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div></div><footer><div id="footer-inner"><div class="social-icons"></div><p class="design-info">power by <a href="https://hexo.io" target="_blank">Hexo</a> | theme <a href="https://github.com/lazysheep666/terminal_theme" target="_blank">Teminal</a></p><p class="copyright">Copyright © chlins Blog 2018</p></div></footer><script src="/js/nav.js"></script><script src="/js/scroll.js"></script><script src="/js/index.js"></script></body></html>
